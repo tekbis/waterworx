@@ -1,0 +1,58 @@
+/* Shared small-screen layout, touch targets, and Tekbis watermark. */
+body::after{content:"";position:fixed;inset:0;z-index:40;pointer-events:none;background-repeat:repeat;background-size:270px 190px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='270' height='190' viewBox='0 0 270 190'%3E%3Ctext x='50' y='114' transform='rotate(-25 135 95)' font-family='Arial,sans-serif' font-size='25' font-weight='700' fill='%235ca9c3' fill-opacity='.14' stroke='white' stroke-opacity='.12' stroke-width='.5'%3ETEKBIS LLC%3C/text%3E%3C/svg%3E")}
+main,section,.herocopy,.book>div{min-width:0}
+img{max-width:100%}
+section[id]{scroll-margin-top:95px}
+input,select,textarea{font-size:16px;min-width:0;max-width:100%;min-height:48px;border-radius:4px}
+label{min-width:0}
+.btn,.navbtn,.menu{min-height:48px}
+.menu{min-width:48px;border-radius:4px}
+.menu:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid #20c6e4;outline-offset:4px}
+.honeypot{display:none!important}
+.tekbis-credit{color:#79e6f6;font-weight:700;letter-spacing:1px}
+.success{overflow-wrap:anywhere}
+.aboutpic{background-image:url('pressure-washing-patio.png')}
+@media(max-width:1050px){
+ nav{height:76px;padding:0 5%}
+ nav img{width:128px;height:70px}
+ .menu{display:block;font-size:25px}
+ .links{display:none}
+ .links.show{position:absolute;top:76px;left:0;right:0;display:flex;flex-direction:column;align-items:stretch;gap:0;padding:16px 5%;background:#fff;border-top:1px solid #d7e7ec;box-shadow:0 12px 22px #061b3b20;max-height:calc(100dvh - 76px);overflow-y:auto}
+ .links.show a{display:flex;align-items:center;padding:12px;min-height:48px;font-size:16px}
+ .links.show .navbtn{margin-top:8px;justify-content:center}
+}
+@media(max-width:650px){
+ .top{display:flex;gap:8px;flex-wrap:wrap;align-items:center;justify-content:center;font-size:12px;padding:8px 5%}
+ .top a{margin:0;white-space:nowrap}
+ .hero{height:auto;min-height:560px}
+ .herocopy{width:100%;padding:58px 6%;max-width:none}
+ .hero h1{font-size:clamp(2.3rem,10.5vw,3.5rem);line-height:1.12;letter-spacing:-1.6px}
+ .heroimg{background:linear-gradient(90deg,#041a38ec,#062448b8),url('pressure-washing-hero.png') 70% center/cover}
+ .hero p:not(.eyebrow){font-size:16px;line-height:1.7}
+ .eyebrow{font-size:12px;letter-spacing:1.2px}
+ .herocopy>.btn{display:flex;justify-content:center;width:100%;font-size:16px;padding:15px!important}
+ .call{display:flex;align-items:center;justify-content:center;min-height:48px;font-size:16px;margin:10px 0 0}
+ .stars{margin-top:24px;font-size:16px}
+ .stars span{display:block;margin:7px 0 0;font-size:13px;line-height:1.5}
+ .trust,.reviews,.cards,.reasons,.steps{grid-template-columns:minmax(0,1fr)}
+ .trust{gap:22px;padding:28px 6%}
+ .trust span,.trust b{font-size:14px}
+ .section,.results,.book{padding:58px 6%}
+ .section h2,.about h2,.book h2,.results h2{font-size:clamp(2.1rem,9vw,3.1rem);letter-spacing:-1.4px;line-height:1.14}
+ .about{grid-template-columns:minmax(0,1fr)}
+ .aboutpic{min-height:0;height:360px;background-position:center 40%}
+ .about>div:last-child{padding:45px 6%}
+ .about ul{padding-left:20px}
+ .reviews blockquote{padding:25px}
+ .reviews small{display:block;font-size:14px;line-height:1.5}
+ .book{grid-template-columns:minmax(0,1fr);gap:28px}
+ .book form{grid-template-columns:minmax(0,1fr);padding:24px 20px;gap:18px}
+ .book form label{grid-column:1/-1;font-size:14px}
+ .book form .btn{width:100%;white-space:normal;font-size:16px;line-height:1.5}
+ .book form h3{font-size:20px;line-height:1.3}
+ .results{grid-template-columns:minmax(0,1fr);gap:26px}
+ .photos{gap:8px}
+ .photos span{top:8px;left:8px;padding:6px 7px;font-size:10px}
+ footer{padding:35px 6%;font-size:14px;overflow-wrap:anywhere}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cards article,.cards article::before,.steps article,.reasons article{transition:none!important;transform:none!important}}

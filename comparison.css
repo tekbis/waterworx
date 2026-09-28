@@ -1,0 +1,6 @@
+/* Matching color views of the same driveway; equal frames on every viewport. */
+.photos{align-items:start;gap:14px}
+.photos div{height:auto;aspect-ratio:3/4;background-image:url('driveway-comparison.png');background-size:200% 100%;background-repeat:no-repeat;margin:0;filter:none}
+.photos .before{background-position:left center}
+.photos .after{background-position:right center}
+.photos span{font-size:12px;letter-spacing:.06em;padding:7px 10px}

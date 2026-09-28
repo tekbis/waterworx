@@ -1,0 +1,20 @@
+/* Service photographs with a contrast layer for readable copy. */
+.cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.cards article{position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;min-height:470px;padding:32px;border:0;border-radius:8px;background:#061b3b;color:#fff;box-shadow:0 8px 24px #061b3b12}
+.cards article::before{content:"";position:absolute;inset:0;z-index:-2;background-image:var(--service-photo);background-position:center;background-size:cover;transition:transform .4s ease}
+.cards article::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(3,19,40,.06) 0%,rgba(3,19,40,.36) 28%,rgba(3,19,40,.93) 57%,#031328 100%)}
+.cards article:nth-child(1){--service-photo:url('service-house-wash.png')}
+.cards article:nth-child(2){--service-photo:url('pressure-washing-hero.png')}
+.cards article:nth-child(3){--service-photo:url('service-roof-gutters.png')}
+.cards article:nth-child(4){--service-photo:url('pressure-washing-patio.png')}
+.cards article:nth-child(2)::before{background-position:75% center}
+.cards article:nth-child(4)::before{background-position:center 66%}
+.cards article:hover::before{transform:scale(1.035)}
+.cards article i{display:none}
+.cards article h3{color:#fff;font-size:26px;line-height:1.2;margin:0 0 14px;letter-spacing:-.5px}
+.cards article p{font-size:16px;line-height:1.65;color:#e0edf5;margin:0 0 22px;max-width:540px}
+.cards article a{align-self:flex-start;display:inline-block;font-size:14px;font-weight:800;color:#79e6f6;margin:0;padding:9px 0;min-height:44px;text-decoration:none}
+.cards article a:hover{text-decoration:underline}
+.cards article a:focus-visible{outline:2px solid #79e6f6;outline-offset:5px}
+@media(max-width:600px){.cards{grid-template-columns:1fr}.cards article{min-height:450px;padding:26px}.cards article h3{font-size:24px}}
+@media(prefers-reduced-motion:reduce){.cards article::before{transition:none}}
